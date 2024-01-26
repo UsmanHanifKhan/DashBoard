@@ -23,16 +23,20 @@ const Navbar = () => {
     };
   }, []);
 
+  const navbarStyles = {
+    paddingLeft: showSidebar ? '50px' : '0', 
+  };
+
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid">
       <div className="row">
         {showSidebar && (
-          <div className="col-lg-2 col-md-3 col-sm-4 ">
+          <div className="col-lg-2 col-md-3 col-sm-4">
             <Sidebar toggleSidebar={toggleSidebar} />
           </div>
         )}
         {(!isSmallScreen || !showSidebar) && (
-          <div className="col">
+          <div className="col" style={navbarStyles}>
             <HomeNavbar toggleSidebar={toggleSidebar} />
           </div>
         )}
